@@ -1,0 +1,283 @@
+﻿<common:LayoutAwarePage
+    x:Name="pageRoot"
+    x:Class="Complejos.MainPage"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Complejos"
+    xmlns:common="using:Complejos.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:Complejos.ViewModel"
+    xmlns:Converters="using:Complejos.Converters"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+
+        <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
+        <x:String x:Key="AppName">Complex</x:String>
+        <Style x:Key="Input" TargetType="TextBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <vm:MainViewModel x:Key="MainVM"/>
+        <Converters:PiConverter x:Key="PiConverter"/>
+        <Converters:FormatConverter x:Key="FormatConverter"/>
+        <Converters:toCanvas x:Key="toCanvas"/>
+    </Page.Resources>
+
+    <!--
+        This grid acts as a root panel for the page that defines two rows:
+        * Row 0 contains the back button and page title
+        * Row 1 contains the rest of the page layout
+    -->
+    <Grid Style="{StaticResource LayoutRootStyle}" DataContext="{StaticResource MainVM}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Back button and page title -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{StaticResource AppName}" Style="{StaticResource PageHeaderTextStyle}" Margin="90,0,30,40"/>
+        </Grid>
+
+
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+            <Canvas  Height="300" Width="300" Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="2" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                <Canvas.Clip>
+                    <RectangleGeometry Rect="0,0,290,290"/>
+                </Canvas.Clip>
+                <Line X1="150" X2="150" Y1="0" Y2="300" Stroke="White" StrokeThickness="4" />
+                <Line X1="0" X2="300" Y1="150" Y2="150" Stroke="White" StrokeThickness="4" />
+                <Line X1="150" Y1="150" X2="{Binding Binomic.X, Converter={StaticResource toCanvas}, ConverterParameter=True}" Y2="{Binding Binomic.Y, Converter={StaticResource toCanvas}, ConverterParameter=False}" Stroke="Red" StrokeThickness="4"/>
+                <Line X1="150" Y1="150" X2="{Binding Sqrt.X, Converter={StaticResource toCanvas}, ConverterParameter=True}" Y2="{Binding Sqrt.Y, Converter={StaticResource toCanvas}, ConverterParameter=False}" Stroke="DarkCyan" StrokeThickness="4"/>
+                <Line X1="150" Y1="150" X2="{Binding Sqrt.X1, Converter={StaticResource toCanvas}, ConverterParameter=True}" Y2="{Binding Sqrt.Y1, Converter={StaticResource toCanvas}, ConverterParameter=False}" Stroke="DarkCyan" StrokeThickness="4"/>
+
+            </Canvas>
+
+
+
+            <!--Exp-->
+
+            <Grid x:Name="Exp" Grid.Row="3" Grid.RowSpan="2" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+
+                <Grid Grid.Row="2" Grid.Column="1" Grid.RowSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="m" MinWidth="200" Grid.Column="0" Margin="0,10,10,0" FontSize="64" 
+                             HorizontalAlignment="Left" Text="{Binding Exp.M, Mode=TwoWay, Converter={StaticResource FormatConverter}}"/>
+                    <TextBlock Grid.Column="1" VerticalAlignment="Center" FontSize="96" 
+                               Text="e" HorizontalAlignment="Right"/>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="2" Grid.RowSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" VerticalAlignment="Bottom" Text="i" FontSize="96" Foreground="Red"/>
+                    <TextBox x:Name="arg" Text="{Binding Exp.A, Converter={StaticResource PiConverter}, Mode=TwoWay}" MaxWidth="200" Margin="20,0,10,0" VerticalAlignment="Top" Grid.Column="1" FontSize="64" Background="White" />
+                </Grid>
+            </Grid>
+
+            <!--Sqrt1-->
+
+            <Grid x:Name="Sqrt1" Grid.Row="1" Grid.RowSpan="2" Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="2" Grid.Column="1" Grid.RowSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="sqrt1m" Text="{Binding Sqrt.M, Converter={StaticResource FormatConverter}}" MinWidth="200" Grid.Column="0" Margin="0,10,10,0" FontSize="64" 
+                             InputScope="Number" HorizontalAlignment="Left"/>
+                    <TextBlock Grid.Column="1" VerticalAlignment="Center" FontSize="96" 
+                               Text="e" HorizontalAlignment="Right"/>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="2" Grid.RowSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" VerticalAlignment="Bottom" Text="i" FontSize="96" Foreground="DarkCyan"/>
+                    <TextBox x:Name="sqrt1arg" Text="{Binding Sqrt.A, Converter={StaticResource PiConverter}}" MaxWidth="200" Margin="20,0,10,0" VerticalAlignment="Top" Grid.Column="1" FontSize="64" Background="White" />
+                </Grid>
+            </Grid>
+
+
+            <!--Sqrt2-->
+
+            <Grid x:Name="Sqrt2" Grid.Row="3" Grid.RowSpan="2" Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="2" Grid.Column="1" Grid.RowSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="sqrt2m" MinWidth="200" Grid.Column="0" Margin="0,10,10,0" FontSize="64" 
+                               InputScope="Number" HorizontalAlignment="Left" Text="{Binding Sqrt.M, Converter={StaticResource FormatConverter}}"/>
+                    <TextBlock Grid.Column="1" VerticalAlignment="Center" FontSize="96" 
+                               Text="e" HorizontalAlignment="Right"/>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="2" Grid.RowSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" VerticalAlignment="Bottom" Text="i" FontSize="96" Foreground="DarkCyan"/>
+                    <TextBox x:Name="sqrt2arg" MaxWidth="200" Margin="20,0,10,0" VerticalAlignment="Top" Grid.Column="1" FontSize="64" Background="White" Text="{Binding Sqrt.A1, Converter={StaticResource PiConverter}}" />
+                </Grid>
+            </Grid>
+
+            <!--Binomic-->
+
+            <Grid x:Name="Binomic" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="a" Grid.Column="0" MinWidth="200" InputScope="Number" FontSize="64"  Text="{Binding Binomic.X, Mode=TwoWay, Converter={StaticResource FormatConverter}}"/>
+                    <TextBlock Text="i" Grid.Column="2" FontSize="96" Margin="0, 0, 20, 0" Foreground="Red"/>
+                    <TextBlock Text="+" Grid.Column="1" FontSize="96"  Foreground="White"/>
+                    <TextBox x:Name="b" Grid.Column="3" MinWidth="200" InputScope="Number" FontSize="64" Text="{Binding Binomic.Y, Mode=TwoWay, Converter={StaticResource FormatConverter}}" />
+                </Grid>
+            </Grid>
+
+
+            <TextBlock Name="Title1" Grid.Row="0" Grid.Column="0" Text="Binomic &amp; Exponential" Height="66" Width="495" FontSize="48"/>
+            <TextBlock Name="Title2" Grid.Row="0" Grid.Column="2" Height="66" Width="141" FontSize="48" Text="SQRTs" Foreground="White"/>
+        </Grid>
+
+        <VisualStateManager.VisualStateGroups>
+
+            <!-- Visual states reflect the application's view state -->
+            <VisualStateGroup x:Name="ApplicationViewStates">
+                <VisualState x:Name="FullScreenLandscape"/>
+                <VisualState x:Name="Filled"/>
+
+                <!-- The entire page respects the narrower 100-pixel margin convention for portrait -->
+                <VisualState x:Name="FullScreenPortrait"/>
+
+                <!-- The back button and title have different styles when snapped -->
+                <VisualState x:Name="Snapped">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Exp" Storyboard.TargetProperty="Visibility">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                            </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Binomic" Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Sqrt1" Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Sqrt2" Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Title1" Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Title2" Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pageTitle" Storyboard.TargetProperty="FontSize">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="48"/>
+                        </ObjectAnimationUsingKeyFrames>
+
+                    </Storyboard>
+                </VisualState>                
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+
+</common:LayoutAwarePage>
+

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="7236GregorioJuliana.ComplexCalculator" Publisher="CN=4775FB50-E626-4F0B-97EA-3067F2A0BA1A" Version="1.0.1.5" />
+  <Properties>
+    <DisplayName>ComplexCalculator</DisplayName>
+    <PublisherDisplayName>Gregorio Juliana</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Complejos.App">
+      <VisualElements DisplayName="ComplexCalculator" Logo="Assets/ComplexLogo.png" SmallLogo="Assets\SmallLogo.png" Description="Simple complex number calculator, switches between binomic and exponential forms and also gives the square roots of the number. Works with Pi fractions." ForegroundText="light" BackgroundColor="#464646">
+        <DefaultTile ShowName="allLogos" ShortName="Complex" />
+        <SplashScreen Image="Assets\SplashScreen2.png" />
+        <InitialRotationPreference>
+          <Rotation Preference="landscape" />
+        </InitialRotationPreference>
+      </VisualElements>
+    </Application>
+  </Applications>
+</Package>

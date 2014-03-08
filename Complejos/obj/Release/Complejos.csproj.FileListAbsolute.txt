@@ -1,0 +1,56 @@
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\bin\Release\Complejos.exe
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\bin\Release\Complejos.pdb
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\bin\Release\resources.pri
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\bin\Release\AppxManifest.xml
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\bin\Release\Complejos.build.appxrecipe
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\obj\Release\App.g.i.cs
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\obj\Release\App.g.cs
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\obj\Release\Common\StandardStyles.g.i.cs
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\obj\Release\Common\StandardStyles.g.cs
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\obj\Release\MainPage.g.i.cs
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\obj\Release\MainPage.g.cs
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\obj\Release\XamlTypeInfo.g.cs
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\obj\Release\App.xaml
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\obj\Release\Common\StandardStyles.xaml
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\obj\Release\MainPage.xaml
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\obj\Release\Complejos.exe
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\obj\Release\Complejos.pdb
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\obj\Release\priconfig.xml
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\obj\Release\layout.resfiles
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\obj\Release\resources.resfiles
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\obj\Release\pri.resfiles
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\obj\Release\LanguageQualifiers.txt
+C:\Users\Gregorio\Documents\Visual Studio 2012\Projects\Complejos\Complejos\obj\Release\ProjectArchitectures.txt
+C:\Users\Gregorio\documents\visual studio 2012\Projects\Complejos\Complejos\obj\Release\priconfig.xml.intermediate
+C:\Users\Gregorio\documents\visual studio 2012\Projects\Complejos\Complejos\obj\Release\layout.resfiles.intermediate
+C:\Users\Gregorio\documents\visual studio 2012\Projects\Complejos\Complejos\obj\Release\resources.resfiles.intermediate
+C:\Users\Gregorio\documents\visual studio 2012\Projects\Complejos\Complejos\obj\Release\pri.resfiles.intermediate
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\bin\Release\Complejos.exe
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\bin\Release\Complejos.pdb
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\bin\Release\resources.pri
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\bin\Release\AppxManifest.xml
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\bin\Release\Complejos.build.appxrecipe
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\App.g.i.cs
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\App.g.cs
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\Common\StandardStyles.g.i.cs
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\Common\StandardStyles.g.cs
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\MainPage.g.i.cs
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\MainPage.g.cs
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\XamlTypeInfo.g.cs
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\App.xaml
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\Common\StandardStyles.xaml
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\MainPage.xaml
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\Complejos.exe
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\Complejos.pdb
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\priconfig.xml
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\priconfig.xml.intermediate
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\layout.resfiles
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\layout.resfiles.intermediate
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\resources.resfiles
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\resources.resfiles.intermediate
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\pri.resfiles
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\pri.resfiles.intermediate
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\qualifiers.txt
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\qualifiers.txt.intermediate
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Gregorio\Documents\GitHub\Complejos\Complejos\obj\Release\ProjectArchitectures.txt
